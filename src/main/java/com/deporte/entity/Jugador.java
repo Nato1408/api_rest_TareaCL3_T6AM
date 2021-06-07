@@ -1,4 +1,4 @@
-package com.empresa.entity;
+package com.deporte.entity;
 
 import java.util.Date;
 
@@ -16,31 +16,33 @@ import org.springframework.format.annotation.DateTimeFormat;
 import com.fasterxml.jackson.annotation.JsonFormat;
 
 @Entity
-@Table(name = "alumno")
-public class Alumno {
+@Table(name = "jugadores")
+public class Jugador {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "idalumno")
-	private Integer idAlumno;
+	@Column(name = "idjugador")
+	private Integer idJugador;
 	
 	private String nombre;
 	
-	private String dni;
+	private String apellido;
 	
-	private String correo;
+	private String dni;
 	
 	@JsonFormat(pattern = "yyyy-MM-dd")
 	@Temporal(TemporalType.DATE)
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date fechaNacimiento;
+	
+	private String posicion;
 
-	public Integer getIdAlumno() {
-		return idAlumno;
+	public Integer getIdJugador() {
+		return idJugador;
 	}
 
-	public void setIdAlumno(Integer idAlumno) {
-		this.idAlumno = idAlumno;
+	public void setIdJugador(Integer idJugador) {
+		this.idJugador = idJugador;
 	}
 
 	public String getNombre() {
@@ -51,20 +53,20 @@ public class Alumno {
 		this.nombre = nombre;
 	}
 
+	public String getApellido() {
+		return apellido;
+	}
+
+	public void setApellido(String apellido) {
+		this.apellido = apellido;
+	}
+
 	public String getDni() {
 		return dni;
 	}
 
 	public void setDni(String dni) {
 		this.dni = dni;
-	}
-
-	public String getCorreo() {
-		return correo;
-	}
-
-	public void setCorreo(String correo) {
-		this.correo = correo;
 	}
 
 	public Date getFechaNacimiento() {
@@ -75,5 +77,14 @@ public class Alumno {
 		this.fechaNacimiento = fechaNacimiento;
 	}
 
+	public String getPosicion() {
+		return posicion;
+	}
+
+	public void setPosicion(String posicion) {
+		this.posicion = posicion;
+	}
+
+	
 	
 }
