@@ -20,15 +20,7 @@ public class JugadorServiceImpl implements JugadorService {
 		return repository.findAll();
 	}
 
-	@Override
-	public Jugador insertaActualizaAlumno(Jugador obj) {
-		return repository.save(obj);
-	}
 
-	@Override
-	public void eliminaAlumno(int id) {
-		repository.deleteById(id);
-	}
 
 	
 
